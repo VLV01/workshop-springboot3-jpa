@@ -1,9 +1,7 @@
 package com.educandoweb.couse.entities;
-
 import com.educandoweb.couse.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
