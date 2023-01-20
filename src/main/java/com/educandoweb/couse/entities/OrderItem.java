@@ -2,7 +2,6 @@ package com.educandoweb.couse.entities;
 
 import com.educandoweb.couse.entities.pk.OrderItemPK;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -39,6 +38,7 @@ public class OrderItem implements Serializable {
     public void setOrder(Order order) {
         id.setOrder(order);
     }
+
 
     public Product getProduct() {
         return id.getProduct();
