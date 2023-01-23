@@ -1,13 +1,11 @@
 package com.educandoweb.couse.resources;
 
 import com.educandoweb.couse.entities.Product;
+import com.educandoweb.couse.entities.User;
 import com.educandoweb.couse.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,9 +23,8 @@ public class ProductResource {
      }
 
      @GetMapping(value = "/{id}")
-    public ResponseEntity<Product> findById(@PathVariable Long id) {
+     public ResponseEntity<Product> findById(@PathVariable Long id) {
          Product obj = service.findbyId(id);
          return ResponseEntity.ok().body(obj);
      }
-
 }
