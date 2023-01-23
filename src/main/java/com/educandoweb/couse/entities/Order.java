@@ -1,7 +1,9 @@
 package com.educandoweb.couse.entities;
+
 import com.educandoweb.couse.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
@@ -32,12 +34,14 @@ public class Order implements Serializable {
 
     public Order() {
     }
+
     public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
         this.id = id;
         this.moment = moment;
         setOrderStatus(orderStatus);
         this.client = client;
     }
+
     public Long getId() {
         return id;
     }
@@ -57,6 +61,7 @@ public class Order implements Serializable {
     public OrderStatus getOrderStatus() {
         return OrderStatus.valueOf(orderStatus);
     }
+
     public void setOrderStatus(OrderStatus orderStatus) {
         if (orderStatus != null) {
             this.orderStatus = orderStatus.getCode();
@@ -74,7 +79,7 @@ public class Order implements Serializable {
     public Double getTotal() {
         double sum = 0.0;
         for (OrderItem x : items) {
-            sum+= x.getSubTotal();
+            sum += x.getSubTotal();
         }
         return sum;
     }
